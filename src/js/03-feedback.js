@@ -41,10 +41,15 @@ if(localStorage.length != 0)
         if(!emailRegex.test(input.value)){
             return alert("Please enter a valid email address.");
         }
-        // const {elements: { email, message }} = evt.currentTarget;
-        console.log({email: email.value, message: message.value});
+        const objData = {
+            email: input.value,
+            message: textarea.value
+        };
+        console.log(objData);
+
+        console.log({email: input.value, message: textarea.value});
         
-        if (email.value === "" || message === ""){
+        if ( input.value === "" || textarea.value === "" ){
             return alert ("Input your email and feedback!");
         }
         localStorage.removeItem(LOCALSTOREAGE_KEY);
