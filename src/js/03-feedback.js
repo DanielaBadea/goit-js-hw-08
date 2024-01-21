@@ -33,9 +33,13 @@ if(localStorage.length != 0)
     };
 
     form.addEventListener('input', throttle((callbakSavedDataUser), 500));
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
+        if(!emailRegex.test(input.value)){
+            return alert("Please enter a valid email address.");
+        }
         // const {elements: { email, message }} = evt.currentTarget;
         console.log({email: email.value, message: message.value});
         
