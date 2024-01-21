@@ -37,6 +37,7 @@ if(localStorage.length != 0)
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
+        // Metoda test() testează o potrivire într-un șir.Dacă găsește o potrivire, returnează true, în caz contrar returnează false.
         if(!emailRegex.test(input.value)){
             return alert("Please enter a valid email address.");
         }
